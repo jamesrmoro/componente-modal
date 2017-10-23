@@ -13,7 +13,7 @@
 .modal {
 
 	display: none;
-    height: 296px;
+    /*height: 296px;*/
     padding: 0;
     position: fixed;
 	top: 50%;
@@ -32,7 +32,6 @@
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    border: 1px solid red;
 }
 
 .btn-fechar-modal {
@@ -40,10 +39,14 @@
     position: fixed;
     z-index: 9999;
     color: #fff;
-    font-size: 51px;
-    right: 35px;
-    top: 45px;
+    right: -20px;
+    top: -20px;
     font-family: arial;
+    background: #000;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    font-size: 2em;
+    text-align: center;
     cursor: pointer;
-    display: none;
 }

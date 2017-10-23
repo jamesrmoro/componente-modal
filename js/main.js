@@ -3,20 +3,19 @@
 		$( "body" ).on( "click", ".open-modal", function(event) {
 			event.preventDefault(event);
 			var modal = $(this).attr('data-modal');
+			var link = $(this).attr("data-link");
 			$("#"+modal).fadeIn();
 		    $('.bg-modal, .btn-fechar-modal, .modal').fadeIn();
+		    $('.wrapper').html('<iframe src="http://www.youtube.com/embed/'+link+'?autoplay=1" width="100%" height="296" frameborder="0" allowfullscreen></iframe>');
 		});
 
 		//--- Fecha o  modal ------------------------------
 		$("body").on("click", '.btn-fechar-modal, .bg-modal', function(event){
 				$('.modal, .bg-modal, .btn-fechar-modal').fadeOut("slow");
+  				setTimeout(function() {
+				    $('.wrapper').html('');
+				}, 1000);
 				event.preventDefault(event);
-				//$('.modal').css('top','-299px');
 			});
 		});
-	  function download_ebook3(){
-			var email = $('#ebook-coaching-de-emagrecimento input[name="your-email"]').val();
-			$('#ebook-coaching-de-emagrecimento .box-download span.email').html(email);
-			$('#ebook-coaching-de-emagrecimento .content-form').hide();
-			$('#ebook-coaching-de-emagrecimento .box-download').delay(300).fadeIn();
-		}
+
